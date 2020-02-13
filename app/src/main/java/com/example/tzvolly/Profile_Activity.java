@@ -2,9 +2,13 @@ package com.example.tzvolly;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,13 +33,17 @@ public class Profile_Activity extends AppCompatActivity {
     String nameEn,nameBn,mobile,email,usertype;
     TextView useerNameBN,userNameEN,mobileno,emailS,addresstpe;
     EditText mobET,passET;
+    SharedPreferences sharedPreferences ;
     String A,B;
+    Button profilebt;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_);
+
+        sharedPreferences = this.getSharedPreferences("myapp", Context.MODE_PRIVATE);
 
 
         useerNameBN = findViewById(R.id.usernameBNId);
@@ -48,7 +56,18 @@ public class Profile_Activity extends AppCompatActivity {
         passET = findViewById(R.id.passET);
 
 
+        profilebt  = findViewById(R.id.profileID);
+        profilebt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Profile_Activity.this, Activity_new11.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+
 
 
     public void parseForVolley(View view) {
@@ -73,6 +92,15 @@ public class Profile_Activity extends AppCompatActivity {
                     email = jsonObject.getString("users_email");
                     usertype = jsonObject.getString("users_address_type");
                     nameEn = jsonObject.getString("users_name_en");
+
+                    sharedPreferences.edit().putString("namebn",nameBn).apply();
+                    sharedPreferences.edit().putString("mob",mobile).apply();
+                    sharedPreferences.edit().putString("email",email).apply();
+                    sharedPreferences.edit().putString("type",usertype).apply();
+                    sharedPreferences.edit().putString("nameen",nameEn).apply();
+
+
+
 
 
                     useerNameBN.setText(nameBn);

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".JsonArray"></activity>
+        <activity android:name=".Activity_new11"></activity>
+        <activity android:name=".JsonArray" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".Profile_Activity">
             <intent-filter>

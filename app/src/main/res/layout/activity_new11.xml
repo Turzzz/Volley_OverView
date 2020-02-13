@@ -2,36 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile_Activity">
-
-
-    <EditText
-        android:id="@+id/mobET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></EditText>
-
-    <EditText
-        android:id="@+id/passET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></EditText>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="parseForVolley"
-        android:text="submit"
-        tools:ignore="MissingConstraints"></Button>
-
-    <Button
-        android:id="@+id/profileID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="profile"
-        ></Button>
-
+    tools:context=".Activity_new11">
 
     <TextView
         android:id="@+id/usernameENId"
@@ -62,5 +35,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         ></TextView>
+
 
 </LinearLayout>
